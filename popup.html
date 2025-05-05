@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tl;dv Transcript Copier</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367D6;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 5px;
+      text-align: center;
+    }
+    #transcriptContainer {
+      margin-top: 15px;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .info-box {
+      background-color: #e8f4f8;
+      border-left: 3px solid #4285F4;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2>tl;dv トランスクリプトコピー</h2>
+  <p>tl;dvのページを開いた状態でボタンをクリックすると、トランスクリプトをコピーします。</p>
+  
+  <div class="info-box">
+    <strong>自動検出機能:</strong>
+    <p>以下のURLパターンが検出されると自動的にトランスクリプトが表示されます：<br>
+    <code>https://tldv.io/app/meetings/..?transcript=true&video=true</code></p>
+  </div>
+  
+  <button id="copyButton">トランスクリプトをコピー</button>
+  <div id="status" class="status"></div>
+  <div id="transcriptContainer" style="display: none;"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 
